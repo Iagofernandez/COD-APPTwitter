@@ -34,7 +34,7 @@ public class TwitterAP {
         
  Twitter twitter1 = TwitterFactory.getSingleton();
     List<Status> statuses = twitter.getHomeTimeline();
-    System.out.println("Showing home timeline.");
+    System.out.println("Linea de tiempo");
     for (Status statu : statuses) {
         System.out.println(statu.getUser().getName() + ":" +
                            statu.getText());
