@@ -19,7 +19,13 @@ import twitter4j.conf.ConfigurationBuilder;
  * @author ifernandezblanco
  */
 public class TwitterAP {
-        public static void main(String[] args) throws TwitterException {
+
+    /**
+     *
+     * @param args
+     * @throws TwitterException
+     */
+    public static void main(String[] args) throws TwitterException {
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true);
         TwitterFactory tf = new TwitterFactory(cb.build());
@@ -34,12 +40,14 @@ public class TwitterAP {
         Twitter twitter1 = TwitterFactory.getSingleton();
         /**creacion de la variable latestStatus
         *se inicia dandole un valor que escribira en Twitter
-         */
+        */
             String latestStatus = "hola chicos";
   Status status = twitter.updateStatus(latestStatus);
   System.out.println("Se actualizo el estado [" + status.getText() + "].");
   
-          /**Esto nos permite ver la linea de tiempo de todo tu Twitter
+          /**
+           * @author ifernandezblanco
+           * Esto nos permite ver la linea de tiempo de todo tu Twitter
            * List Status que nos da linea de tiempo
            * 
            */
