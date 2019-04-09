@@ -5,6 +5,7 @@
  */
 package twitterjavagt;
 
+import java.io.IOException;
 import java.util.List;
 import twitter4j.Query;
 import twitter4j.QueryResult;
@@ -12,6 +13,9 @@ import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
+import twitter4j.auth.AccessToken;
+import twitter4j.auth.RequestToken;
+import twitter4j.conf.ConfigurationBuilder;
 
 /**
  *
@@ -46,9 +50,11 @@ public class TwitterAP {
     for (Status statu : result.getTweets()) {
         System.out.println("@" + statu.getUser().getScreenName() + ":" + statu.getText());
     }
-        }
     
-}
+     
+        }
+    }
+
         
     
     
