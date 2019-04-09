@@ -6,6 +6,8 @@
 package twitterjavagt;
 
 import java.util.List;
+import twitter4j.Query;
+import twitter4j.QueryResult;
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
@@ -30,10 +32,23 @@ public class TwitterAP {
   System.out.println("Se actualizo el estado [" + status.getText() + "].");
   
         
- 
-        }
+ Twitter twitter1 = TwitterFactory.getSingleton();
+    List<Status> statuses = twitter.getHomeTimeline();
+    System.out.println("Showing home timeline.");
+    for (Status statu : statuses) {
+        System.out.println(statu.getUser().getName() + ":" +
+                           statu.getText());
     }
-
+    
+    Twitter twitter2 = TwitterFactory.getSingleton();
+    Query query = new Query("source:twitter4j yusukey");
+    QueryResult result = twitter.search(query);
+    for (Status statu : result.getTweets()) {
+        System.out.println("@" + statu.getUser().getScreenName() + ":" + statu.getText());
+    }
+        }
+    
+}
         
     
     
